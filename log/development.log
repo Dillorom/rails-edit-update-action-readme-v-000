@@ -637,3 +637,37 @@ Processing by PostsController#update as HTML
   [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
 Redirected to http://165.227.31.156:39207/posts/1
 Completed 302 Found in 6ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/posts/1" for 73.254.230.154 at 2018-07-27 23:35:27 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1/edit" for 73.254.230.154 at 2018-07-27 23:35:32 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/1" for 73.254.230.154 at 2018-07-27 23:35:37 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uZBZi/AMRxT0XYWevyzivj+5OLRJBVqMY0eej46UFpdzx9+6Kh0+9ZPqU5bDsFirR9b6bz0z/gkIqsCTs9ZK1w==", "title"=>"Rails Introduction Quiz", "description"=>"hello!", "commit"=>"Submit Post", "id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["description", "hello!"], ["updated_at", "2018-07-27 23:35:37.242684"], ["id", 1]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.31.156:39207/posts/1
+Completed 302 Found in 6ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/posts/1" for 73.254.230.154 at 2018-07-27 23:35:37 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
