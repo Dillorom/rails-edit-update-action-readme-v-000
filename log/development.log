@@ -486,3 +486,30 @@ Processing by PostsController#update as HTML
   [1m[35m (58.5ms)[0m  commit transaction
 Redirected to http://165.227.31.156:39207/posts/3
 Completed 302 Found in 63ms (ActiveRecord: 59.0ms)
+
+
+Started GET "/posts/3" for 73.254.230.154 at 2018-07-27 23:32:51 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/3/edit" for 73.254.230.154 at 2018-07-27 23:32:56 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered posts/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52ms (Views: 13.5ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/3" for 73.254.230.154 at 2018-07-27 23:33:03 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I08UEqBnmPBjtdJqMKTsYRIwes2NerFKabAqGzlFYi3pGJIjenbhEQQCBGJMOFZ0al+4FvlMFc8CXXQHBAc+bQ==", "title"=>"", "description"=>"asdfasf", "commit"=>"Submit Post", "id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", ""], ["description", "asdfasf"], ["updated_at", "2018-07-27 23:33:03.163720"], ["id", 3]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://165.227.31.156:39207/posts/3
+Completed 302 Found in 9ms (ActiveRecord: 2.8ms)
