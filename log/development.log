@@ -521,3 +521,30 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
   Rendered posts/show.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/3/edit" for 73.254.230.154 at 2018-07-27 23:34:34 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered posts/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/posts/3" for 73.254.230.154 at 2018-07-27 23:34:42 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TceIUj2Ll2Bh7lZvHS484iyZ27jfso2fb38SKgwrrv+HkA5j55rugQZZgGdhsob3VPYZY6uEKRoEkkw2MWnyvw==", "title"=>"asdfa", "description"=>"hello", "commit"=>"Submit Post", "id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "asdfa"], ["description", "hello"], ["updated_at", "2018-07-27 23:34:42.092741"], ["id", 3]]
+  [1m[35m (4.5ms)[0m  commit transaction
+Redirected to http://165.227.31.156:39207/posts/3
+Completed 302 Found in 9ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/posts/3" for 73.254.230.154 at 2018-07-27 23:34:42 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.2ms)
